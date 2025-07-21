@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+    provider = "prisma-client-js"
+    output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+model Secret {
+    id         String    @id @default(auto()) @map("_id") @db.ObjectId
+    hash       String // SHA256 hash of the original plaintext
+    cipherText String // AES-encrypted version of the plaintext
+    expiresAt  DateTime? // Optional time-to-live (if not set, it’s single-use)
+    burnedAt   DateTime? // Set when the secret is viewed (makes it unusable after)
+    createdAt  DateTime  @default(now())
+}
