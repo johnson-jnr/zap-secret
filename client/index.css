@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.input-border {
+    @apply border border-stone-300 p-2 rounded-md;
+}
