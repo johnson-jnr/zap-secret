@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { ForbiddenException, Injectable, InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
 import { DatabaseService } from 'src/database/database.service';
 import { StoreSecretDto } from './dto/store-secret-dto';
 import { aesEncrypt, aesDecrypt } from 'src/crypto/aes';
@@ -21,10 +21,51 @@ export class SecretService {
             }
         });
 
-        this.logger.log('Hashed stored successfully');
+        this.logger.log('Secret encrypted successfully');
 
         return {
-            success: true
+            success: true,
+            id: secret.id
+        }
+    }
+
+    async get(id: string) {
+        const secret = await this.prisma.secret.findUnique({
+            where: {
+                id
+            }
+        });
+        if (!secret) {
+            throw new NotFoundException();
+        }
+
+        if (secret.expiresAt && secret.expiresAt.getTime() < Date.now()) {
+            throw new ForbiddenException('Expiry period has elapsed');
+        }
+
+        if (secret.burnedAt) {
+            throw new ForbiddenException('Secret has already been viewed');
+        }
+
+        const originalText = aesDecrypt(secret.cipherText);
+        if (!originalText) {
+            throw new InternalServerErrorException();
+        }
+
+        await this.prisma.secret.update({
+            data: {
+                burnedAt: new Date()
+            },
+            where: {
+                id
+            }
+        });
+
+        this.logger.log('Secret decrypted successfully')
+
+        return {
+            success: true,
+            text: originalText
         }
     }
 }
