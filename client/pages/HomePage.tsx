@@ -17,7 +17,8 @@ const Home = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    secret: secret,
+                    secret,
+                    expiryHour: Number(expiryHour) || 1
                 })
             });
 
