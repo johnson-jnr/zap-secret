@@ -6,7 +6,9 @@ function HomeLayout() {
   return (
     <>
         <Navbar />
-        <Outlet />
+        <main className="container min-h-[87vh]">
+            <Outlet />
+        </main>
         <Footer />
     </>
   )
