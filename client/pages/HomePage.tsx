@@ -62,9 +62,9 @@ const Home = () => {
         encryptionId ? `http://localhost:5173/s/${encryptionId}` : null;
 
     return (
-        <div className="py-10">
+        <div>
             <Hero />
-            <section className="md:h-[344px] mt-14 ring rounded-xl max-w-xl mx-auto overflow-hidden">
+            <section className="mt-14 ring rounded-xl max-w-xl mx-auto overflow-hidden">
                 {encryptionId ? (
                     <div>
                         <div className="bg-green-600 text-white font-medium text-center py-2">
@@ -74,7 +74,7 @@ const Home = () => {
                             <h2 className="text-2xl font-bold text-gray-900">
                                 Your one-time link
                             </h2>
-                            <div> Secret: {secret} </div>
+                            <div className="line-clamp-1">Secret: {secret}</div>
 
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2">
                                 <div className="bg-gray-50 border rounded px-3 py-2 text-sm font-mono text-gray-800 overflow-x-auto">
@@ -101,7 +101,7 @@ const Home = () => {
                                         Copy
                                     </button>
                                     {copied && (
-                                        <div className="absolute top-1/2 -translate-y-1/2 translate-x-full left-7 md:translate-y-0 md:-top-full md:left-1/2 md:-translate-x-1/2 text-xs bg-neutral-600 py-1 px-2 rounded-sm text-white transition-opacity duration-300">
+                                        <div className="z-40 absolute top-1/2 -translate-y-1/2 translate-x-full left-7 md:translate-y-0 md:-top-full md:left-1/2 md:-translate-x-1/2 text-xs bg-neutral-600 py-1 px-2 rounded-sm text-white transition-opacity duration-300">
                                             Copied
                                         </div>
                                     )}
@@ -130,14 +130,15 @@ const Home = () => {
                         <h2 className="text-xl font-semibold mb-4 text-center">
                             Encrypt a secret
                         </h2>
-                        <input
-                            type="text"
+                        <textarea
+                            className="input-border w-full mb-4"
+                            rows={3}
                             required
+                            placeholder="Secret to encrypt"
                             value={secret as string}
                             onChange={(e) => setSecret(e.target.value)}
-                            placeholder="Secret to encrypt"
-                            className="input-border w-full mb-4"
-                        />
+                        ></textarea>
+
                         <div className="flex items-center mb-2 text-sm font-medium text-gray-600">
                             <span>Expiry period</span>
                             <div
@@ -167,6 +168,7 @@ const Home = () => {
                         <div className="flex flex-wrap gap-2">
                             {[1, 6, 24].map((n) => (
                                 <button
+                                    type="button"
                                     onClick={() => setExpiry(n)}
                                     className={getExpiryHourClass(n)}
                                 >

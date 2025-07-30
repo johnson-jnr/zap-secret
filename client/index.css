@@ -1,11 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui";
 
-
 :root {
-  font-family: "Inter", system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
 }
 
 .input-border {
-    @apply border border-stone-300 p-2 rounded-md min-h-12;
+    @apply border border-stone-300 py-3 px-4 rounded-md min-h-12;
 }

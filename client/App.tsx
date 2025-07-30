@@ -1,20 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from 'react-router';
 import HomePage from './pages/HomePage';
-import HomeLayout from "./layout/HomeLayout";
-import ViewSecretPage from "./pages/ViewSecretPage";
+import HomeLayout from './layout/HomeLayout';
+import ViewSecretPage from './pages/ViewSecretPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
-
-  return (
-    <BrowserRouter>
-        <Routes>
-            <Route element={<HomeLayout />}>
-                <Route index element={<HomePage />} />
-                <Route path="/s/:id" element={<ViewSecretPage />} />
-            </Route>
-        </Routes>    
-    </BrowserRouter>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route element={<HomeLayout />}>
+                    <Route index element={<HomePage />} />
+                    <Route path="/s/:id" element={<ViewSecretPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-export default App
+export default App;
