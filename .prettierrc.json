@@ -3,6 +3,5 @@
     "trailingComma": "all",
     "tabWidth": 4,
     "semi": true,
-    "useTabs": false,
-    "plugins": ["prettier-plugin-prisma"]
+    "useTabs": false
 }
