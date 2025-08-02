@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Hero from '../components/Hero';
 import HowItWorks from '../components/HowItWorks';
 import WhyTrust from '../components/WhyTrust';
+import { toast } from 'react-toastify';
 
 const Home = () => {
     const [secret, setSecret] = useState<null | string>(null);
@@ -30,6 +31,9 @@ const Home = () => {
             const data = await response.json();
             if (data) {
                 setEncryptionId(data.id);
+                toast.success('Secret encrypted successfully', {
+                    autoClose: 1500,
+                });
             }
         } catch (error) {
             console.error('An error occured: ', error);
@@ -87,7 +91,7 @@ const Home = () => {
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            className="w-4 h-4 stroke-current"
+                                            className="size-4 stroke-current"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                         >
@@ -117,7 +121,10 @@ const Home = () => {
 
                             <div className="flex justify-center gap-4 mt-4 flex-wrap">
                                 <button
-                                    onClick={() => setEncryptionId(null)}
+                                    onClick={() => {
+                                        setEncryptionId(null);
+                                        setSecret(null);
+                                    }}
                                     className="btn btn-outline"
                                 >
                                     Create another secret

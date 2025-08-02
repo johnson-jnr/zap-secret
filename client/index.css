@@ -6,5 +6,5 @@
 }
 
 .input-border {
-    @apply border border-stone-300 py-3 px-4 rounded-md min-h-12;
+    @apply border border-stone-300 py-2 px-3 rounded-md min-h-12;
 }
