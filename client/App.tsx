@@ -3,17 +3,12 @@ import HomePage from './pages/HomePage';
 import HomeLayout from './layout/HomeLayout';
 import ViewSecretPage from './pages/ViewSecretPage';
 import AboutPage from './pages/AboutPage';
+import RoutesConfig from './RoutesConfig';
 
 function App() {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route element={<HomeLayout />}>
-                    <Route index element={<HomePage />} />
-                    <Route path="/s/:id" element={<ViewSecretPage />} />
-                    <Route path="/about" element={<AboutPage />} />
-                </Route>
-            </Routes>
+            <RoutesConfig />
         </BrowserRouter>
     );
 }
