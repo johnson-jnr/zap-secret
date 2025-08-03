@@ -5,7 +5,7 @@ import WhyTrust from '../components/WhyTrust';
 import { toast } from 'react-toastify';
 
 const Home = () => {
-    const [secret, setSecret] = useState<null | string>(null);
+    const [secret, setSecret] = useState<string>('');
     const [expiryHour, setExpiryHour] = useState<null | number | string>(null);
     const [encryptionId, setEncryptionId] = useState<null | string>(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -96,9 +96,9 @@ const Home = () => {
                                             viewBox="0 0 24 24"
                                         >
                                             <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
                                                 d="M9 12h6m2 6a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2m4 0h2a2 2 0 0 1 2 2v10z"
                                             />
                                         </svg>
@@ -123,7 +123,7 @@ const Home = () => {
                                 <button
                                     onClick={() => {
                                         setEncryptionId(null);
-                                        setSecret(null);
+                                        setSecret('');
                                     }}
                                     className="btn btn-outline"
                                 >
@@ -139,10 +139,11 @@ const Home = () => {
                         </h2>
                         <textarea
                             className="input-border w-full mb-4"
+                            data-testid="secret-input"
                             rows={3}
                             required
                             placeholder="Secret to encrypt"
-                            value={secret as string}
+                            value={secret}
                             onChange={(e) => setSecret(e.target.value)}
                         ></textarea>
 
@@ -176,6 +177,7 @@ const Home = () => {
                             {[1, 6, 24].map((n) => (
                                 <button
                                     type="button"
+                                    key={n}
                                     onClick={() => setExpiry(n)}
                                     className={getExpiryHourClass(n)}
                                 >
@@ -185,6 +187,7 @@ const Home = () => {
                         </div>
                         <button
                             type="submit"
+                            data-testid="submit-btn"
                             className="btn btn-primary w-full mt-6"
                         >
                             {isLoading ? (

@@ -53,9 +53,9 @@ const AboutPage = () => {
                             stroke="currentColor"
                         >
                             <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
                                 d="M3 10h18M6 6h12M4 14h16M5 18h14"
                             />
                         </svg>
