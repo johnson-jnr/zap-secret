@@ -29,11 +29,18 @@ const Home = () => {
             });
 
             const data = await response.json();
-            if (data) {
+            if (data.success) {
                 setEncryptionId(data.id);
-                toast.success('Secret encrypted successfully', {
+                toast.success('Secret encrypted successfully.', {
                     autoClose: 1500,
                 });
+            } else {
+                toast.error(
+                    'An error occured encrypting secret. Please try again.',
+                    {
+                        autoClose: false,
+                    },
+                );
             }
         } catch (error) {
             console.error('An error occured: ', error);

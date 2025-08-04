@@ -1,4 +1,11 @@
-import { BadRequestException, ForbiddenException, Injectable, InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
+import {
+    BadRequestException,
+    ForbiddenException,
+    Injectable,
+    InternalServerErrorException,
+    Logger,
+    NotFoundException,
+} from '@nestjs/common';
 import { DatabaseService } from 'src/database/database.service';
 import { StoreSecretDto } from './dto/store-secret-dto';
 import { aesEncrypt, aesDecrypt } from 'src/crypto/aes';
@@ -10,10 +17,13 @@ import { hoursToMs } from 'utils';
 export class SecretService {
     private readonly logger = new Logger(SecretService.name);
 
-    constructor(private readonly prisma: DatabaseService){}
+    constructor(private readonly prisma: DatabaseService) {}
 
     async store(payload: StoreSecretDto) {
-        const hash = crypto.createHash('sha256').update(payload.secret).digest('hex');
+        const hash = crypto
+            .createHash('sha256')
+            .update(payload.secret)
+            .digest('hex');
         const cipherText = aesEncrypt(payload.secret);
         const expiresInMs = hoursToMs(payload.expiryHour);
 
@@ -21,28 +31,27 @@ export class SecretService {
             data: {
                 hash,
                 cipherText,
-                expiresAt: new Date(Date.now() + expiresInMs)
-            }
+                expiresAt: new Date(Date.now() + expiresInMs),
+            },
         });
 
         this.logger.log('Secret encrypted successfully');
 
         return {
             success: true,
-            id: secret.id
-        }
+            id: secret.id,
+        };
     }
 
     async get(id: string) {
-
         if (!ObjectId.isValid(id)) {
             throw new BadRequestException('Invalid Secret ID provided');
         }
 
         const secret = await this.prisma.secret.findUnique({
             where: {
-                id
-            }
+                id,
+            },
         });
         if (!secret) {
             throw new NotFoundException('Secret Not Found.');
@@ -58,23 +67,25 @@ export class SecretService {
 
         const originalText = aesDecrypt(secret.cipherText);
         if (!originalText) {
-            throw new InternalServerErrorException('There was a problem with the decryption');
+            throw new InternalServerErrorException(
+                'There was a problem with the decryption',
+            );
         }
 
         await this.prisma.secret.update({
             data: {
-                burnedAt: new Date()
+                burnedAt: new Date(),
             },
             where: {
-                id
-            }
+                id,
+            },
         });
 
-        this.logger.log('Secret decrypted successfully')
+        this.logger.log('Secret decrypted successfully');
 
         return {
             success: true,
-            text: originalText
-        }
+            text: originalText,
+        };
     }
 }
