@@ -4,15 +4,14 @@ import { StoreSecretDto } from './dto/store-secret-dto';
 
 @Controller('secret')
 export class SecretController {
-    constructor(private readonly secretService: SecretService){}
+    constructor(private readonly secretService: SecretService) {}
     @Post()
     async store(@Body() payload: StoreSecretDto) {
-       return await this.secretService.store(payload);
-    } 
+        return await this.secretService.store(payload);
+    }
 
     @Get('/:id')
     async getSecret(@Param('id') id: string) {
         return await this.secretService.get(id);
     }
-   
 }
