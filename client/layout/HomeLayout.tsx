@@ -6,13 +6,16 @@ import { ToastContainer } from 'react-toastify';
 function HomeLayout() {
     return (
         <>
-            <Navbar />
-            <main className="container min-h-[87vh]">
-                <div className="md:py-10">
-                    <Outlet />
-                </div>
-            </main>
-            <Footer />
+            <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
+                <Navbar />
+                <main className="container">
+                    <div className="md:py-10">
+                        <Outlet />
+                    </div>
+                </main>
+                <Footer />
+            </div>
+
             <ToastContainer aria-label="Toast container" />
         </>
     );

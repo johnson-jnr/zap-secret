@@ -1,8 +1,8 @@
 const AboutPage = () => {
     return (
-        <div className="space-y-12">
+        <div className="space-y-12 md:space-y-16">
             <section className="text-center">
-                <h1 className="text-3xl font-bold text-gray-800 mb-4">
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                     What is SnapSecret?
                 </h1>
                 <p className="text-gray-600 text-base max-w-2xl mx-auto">

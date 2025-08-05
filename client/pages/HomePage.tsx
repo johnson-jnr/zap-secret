@@ -88,7 +88,7 @@ const Home = () => {
                             <div className="line-clamp-1">Secret: {secret}</div>
 
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2">
-                                <div className="bg-gray-50 border rounded px-3 py-2 text-sm font-mono text-gray-800 overflow-x-auto">
+                                <div className="bg-gray-50 border rounded px-3 py-2 text-sm font-mono text-gray-800 wrap-anywhere">
                                     {getSecretLink()}
                                 </div>
                                 <div className="relative">
@@ -145,6 +145,7 @@ const Home = () => {
                             Encrypt a secret
                         </h2>
                         <textarea
+                            name="secret"
                             className="input-border w-full mb-4"
                             data-testid="secret-input"
                             rows={3}
