@@ -24,9 +24,15 @@ export class SecretService {
             .createHash('sha256')
             .update(payload.secret)
             .digest('hex');
-        const cipherText = aesEncrypt(payload.secret);
-        const expiresInMs = hoursToMs(payload.expiryHour);
 
+        let cipherText = '';
+        try {
+            cipherText = aesEncrypt(payload.secret);
+        } catch (error) {
+            throw new InternalServerErrorException(error.message);
+        }
+
+        const expiresInMs = hoursToMs(payload.expiryHour);
         const secret = await this.prisma.secret.create({
             data: {
                 hash,
@@ -65,7 +71,13 @@ export class SecretService {
             throw new ForbiddenException('Secret has already been viewed');
         }
 
-        const originalText = aesDecrypt(secret.cipherText);
+        let originalText = '';
+        try {
+            originalText = aesDecrypt(secret.cipherText);
+        } catch (error) {
+            throw new InternalServerErrorException(error.message);
+        }
+
         if (!originalText) {
             throw new InternalServerErrorException(
                 'There was a problem with the decryption',

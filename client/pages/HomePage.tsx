@@ -146,16 +146,20 @@ const Home = () => {
                         </h2>
                         <textarea
                             name="secret"
-                            className="input-border w-full mb-4"
+                            maxLength={2048}
+                            className="input-border w-full"
                             data-testid="secret-input"
-                            rows={3}
+                            rows={4}
                             required
-                            placeholder="Secret to encrypt"
+                            placeholder="Secret to encrypt (e.g. password, token, short note)"
                             value={secret}
                             onChange={(e) => setSecret(e.target.value)}
                         ></textarea>
+                        <p className="text-xs text-gray-500">
+                            Max 2048 characters
+                        </p>
 
-                        <div className="flex items-center mb-2 text-sm font-medium text-gray-600">
+                        <div className="mt-4 flex items-center mb-2 text-sm font-medium text-gray-600">
                             <span>Expiry period</span>
                             <div
                                 className="expiry-tooltip tooltip tooltip-top md:tooltip-right p-1"

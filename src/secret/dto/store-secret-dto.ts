@@ -1,6 +1,13 @@
-import { IsIn, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import {
+    IsIn,
+    IsNotEmpty,
+    IsNumber,
+    IsString,
+    MaxLength,
+} from 'class-validator';
 export class StoreSecretDto {
     @IsString()
+    @MaxLength(2048)
     @IsNotEmpty()
     secret: string;
 
