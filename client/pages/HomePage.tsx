@@ -11,7 +11,7 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    const encryptSecret = async (e) => {
+    const encryptSecret = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {

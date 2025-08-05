@@ -1,8 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router';
-import HomePage from './pages/HomePage';
-import HomeLayout from './layout/HomeLayout';
-import ViewSecretPage from './pages/ViewSecretPage';
-import AboutPage from './pages/AboutPage';
+import { BrowserRouter } from 'react-router';
 import RoutesConfig from './RoutesConfig';
 
 function App() {
