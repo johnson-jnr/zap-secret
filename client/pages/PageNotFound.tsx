@@ -6,21 +6,23 @@ const PageNotFound = () => {
             <div className="flex flex-col items-center space-y-6">
                 <div className="size-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
                     <svg
-                        className="size-10"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="size-10 text-blue-600"
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke="currentColor"
                     >
                         <path
+                            stroke="currentColor"
+                            strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            strokeWidth="2"
                             d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z"
                         />
                         <path
+                            stroke="#155dfc"
+                            strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            strokeWidth="2"
                             d="M13 9l-2 2m0-2l2 2"
                         />
                     </svg>
