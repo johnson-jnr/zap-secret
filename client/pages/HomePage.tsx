@@ -50,7 +50,7 @@ const Home = () => {
     };
 
     const getExpiryHourClass = (hour: number) => {
-        return `max-w-26 btn btn-outline ${expiryHour === hour && 'btn-active'}`;
+        return `max-w-26 md:w-26 border px-4 rounded-md h-10 ${expiryHour === hour ? 'bg-gray-500 text-white' : 'border-stone-300 hover:bg-gray-100'}`;
     };
 
     const setExpiry = (hour: number) => {
@@ -147,7 +147,7 @@ const Home = () => {
                         <textarea
                             name="secret"
                             maxLength={2048}
-                            className="input-border w-full"
+                            className="border border-stone-300 py-2 px-3 rounded-md min-h-12 w-full focus:border-violet-300 focus:outline-none"
                             data-testid="secret-input"
                             rows={4}
                             required
@@ -200,7 +200,7 @@ const Home = () => {
                         <button
                             type="submit"
                             data-testid="submit-btn"
-                            className="btn btn-primary w-full mt-6"
+                            className="input-border text-white bg-violet-400 hover:bg-violet-500  transition-colors duration-200 w-full mt-6"
                         >
                             {isLoading ? (
                                 <span className="loading loading-spinner text-base-100"></span>
