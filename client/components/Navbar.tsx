@@ -9,7 +9,7 @@ const Navbar = () => {
                 </div>
                 <span className="font-semibold text-lg">SnapSecret</span>
             </Link>
-            <nav className="space-x-6 text-sm font-medium text-gray-600">
+            <nav className="space-x-4 sm:space-x-6 text-sm font-medium text-gray-600">
                 <Link to="/" className="hover:text-black">
                     Home
                 </Link>

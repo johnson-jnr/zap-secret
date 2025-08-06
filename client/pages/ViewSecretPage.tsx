@@ -36,7 +36,7 @@ const ViewSecretPage = () => {
     };
 
     return (
-        <div className="max-w-2xl mx-auto px-4 py-16 text-center">
+        <div className="max-w-2xl mx-auto py-16 text-center">
             <div className="border border-gray-200 rounded-xl bg-white">
                 {isLoading ? (
                     <div className="md:min-w-[640px] min-h-72 md:min-h-[482px] flex items-center justify-center">
@@ -123,7 +123,7 @@ const ViewSecretPage = () => {
                                         </g>
                                     </svg>
                                 </div>
-                                <div className="py-8 text-xl">
+                                <div className="py-5 text-xl">
                                     {errorMessage ??
                                         'An Error Occured. Please try again.'}
                                 </div>

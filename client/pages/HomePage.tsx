@@ -70,12 +70,14 @@ const Home = () => {
 
     const getExpiryHour = () => Number(expiryHour) || 1;
     const getSecretLink = () =>
-        encryptionId ? `http://localhost:5173/s/${encryptionId}` : null;
+        encryptionId
+            ? `${import.meta.env.VITE_APP_URL}/s/${encryptionId}`
+            : null;
 
     return (
         <div>
             <Hero />
-            <section className="mt-12 lg:mt-20 ring rounded-xl max-w-xl mx-auto overflow-hidden">
+            <section className="mt-12 lg:mt-20 ring ring-stone-400 rounded-xl max-w-xl mx-auto overflow-hidden">
                 {encryptionId ? (
                     <div>
                         <div className="bg-green-600 text-white font-medium text-center py-2">
@@ -140,7 +142,7 @@ const Home = () => {
                         </div>
                     </div>
                 ) : (
-                    <form className="p-8" onSubmit={encryptSecret}>
+                    <form className="py-6 px-4 sm:p-8" onSubmit={encryptSecret}>
                         <h2 className="text-xl font-semibold mb-4 text-center">
                             Encrypt a secret
                         </h2>
@@ -212,12 +214,12 @@ const Home = () => {
                 )}
             </section>
 
-            <section className="mt-20 text-center">
+            <section className="mt-12 lg:mt-20 text-center">
                 <h3 className="text-xl font-semibold mb-6">How it works:</h3>
                 <HowItWorks />
             </section>
 
-            <section className="mt-20 text-center">
+            <section className="mt-12 lg:mt-20 text-center">
                 <h3 className="text-xl font-semibold mb-4">Why trust it?</h3>
                 <WhyTrust />
             </section>

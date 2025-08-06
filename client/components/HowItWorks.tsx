@@ -4,7 +4,7 @@ const HowItWorks = () => {
             <div className="bg-white ring-stone-300 ring rounded-xl p-6">
                 <div className="flex justify-center mb-2">
                     <svg
-                        className="w-8 h-8 text-blue-500"
+                        className="w-8 h-8 text-yellow-500"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                     >

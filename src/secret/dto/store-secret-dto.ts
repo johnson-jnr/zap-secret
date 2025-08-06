@@ -12,6 +12,6 @@ export class StoreSecretDto {
     secret: string;
 
     @IsNumber()
-    @IsIn([1, 6, 12])
+    @IsIn([1, 6, 24])
     expiryHour: number;
 }

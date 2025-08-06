@@ -47,7 +47,7 @@ const AboutPage = () => {
                     <div className="flex-shrink-0 p-2 bg-green-100 rounded-full text-green-600">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-6 h-6"
+                            className="size-6"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -105,7 +105,7 @@ const AboutPage = () => {
                     <div className="flex-shrink-0 p-2 bg-red-100 rounded-full text-red-600">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-6 h-6"
+                            className="size-6"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
