@@ -14,11 +14,7 @@ const Hero = () => {
             </div>
 
             <div className="hidden lg:flex w-80 h-60 relative justify-center items-center rounded-3xl overflow-hidden bg-gradient-to-tr from-purple-300 to-blue-200">
-                <div className="absolute -top-6 right-8 size-40 rounded-full bg-white/30 blur-2xl anim-secret"></div>
-                <div
-                    className="absolute -bottom-8 left-6 size-36 rounded-full bg-white/20 blur-2xl anim-secret"
-                    style={{ animationDelay: '.8s' }}
-                ></div>
+                <div className="hero-pattern absolute inset-0"></div>
 
                 <svg
                     className="absolute top-6 left-10 size-5 text-white/80 anim-sparkle"
@@ -28,15 +24,6 @@ const Hero = () => {
                     aria-hidden="true"
                 >
                     <path d="M12 2l1.6 4.3L18 8l-4.4 1.7L12 14l-1.6-4.3L6 8l4.4-1.7L12 2z" />
-                </svg>
-                <svg
-                    className="absolute bottom-8 right-10 size-4 text-white/70 anim-sparkle"
-                    style={{ animationDelay: '1s' }}
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                >
-                    <path d="M12 3l1.2 3.2L16 7l-2.8 1L12 11l-1.2-3L8 7l2.8-.8L12 3z" />
                 </svg>
 
                 <div className="relative z-10 anim-float">
