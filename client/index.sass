@@ -13,3 +13,67 @@ button
         background-color: #292524
         font-size: 12px
         
+
+@media (prefers-reduced-motion: reduce)
+  .anim-float,
+  .anim-tilt,
+  .anim-secret,
+  .anim-draw,
+  .anim-sparkle
+    animation: none !important
+
+@keyframes floatY
+  0%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(-8px)
+
+@keyframes tilt
+  0%, 100%
+    transform: rotate(-2deg)
+  50%
+    transform: rotate(2deg)
+
+@keyframes secretPulse
+  0%, 100%
+    opacity: 0.25
+    transform: scale(1)
+  50%
+    opacity: 0.45
+    transform: scale(1.06)
+
+@keyframes pathDraw
+  0%
+    stroke-dasharray: 240
+    stroke-dashoffset: 240
+  100%
+    stroke-dasharray: 240
+    stroke-dashoffset: 0
+
+@keyframes sparkle
+  0%
+    opacity: 0
+    transform: scale(0.8) translateY(0)
+  20%
+    opacity: 0.9
+  60%
+    opacity: 0.7
+    transform: scale(1.05) translateY(-4px)
+  100%
+    opacity: 0
+    transform: scale(1.2) translateY(-8px)
+
+.anim-float
+  animation: floatY 6s ease-in-out infinite
+
+.anim-tilt
+  animation: tilt 8s ease-in-out infinite
+
+.anim-secret
+  animation: secretPulse 5s ease-in-out infinite
+
+.anim-draw
+  animation: pathDraw 1.6s ease forwards
+
+.anim-sparkle
+  animation: sparkle 2.8s ease-in-out infinite

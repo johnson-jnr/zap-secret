@@ -75,7 +75,7 @@ const Home = () => {
     return (
         <div>
             <Hero />
-            <section className="mt-14 ring rounded-xl max-w-xl mx-auto overflow-hidden">
+            <section className="mt-12 lg:mt-20 ring rounded-xl max-w-xl mx-auto overflow-hidden">
                 {encryptionId ? (
                     <div>
                         <div className="bg-green-600 text-white font-medium text-center py-2">
