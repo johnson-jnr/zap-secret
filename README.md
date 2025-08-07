@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="/client/public/zaplogo.png" width="100" alt="Nest Logo" /></a>
+  <a href="https://www.zapsecret.app" target="blank"><img src="/client/public/zaplogo.png" width="100" alt="Nest Logo" /></a>
 </p>
 
 ## ZapSecret
 
-[ZapSecret](https://github.com/nestjs/nest) lets you share sensitive information with confidence. Just paste your message, set an expiry, and it generate a one-time, self-destructing link that can be shared securely.
+[ZapSecret](https://www.zapsecret.app) lets you share sensitive information with confidence. Just paste your message, set an expiry, and it generate a one-time, self-destructing link that can be shared securely.
 
 ### Project setup
 
