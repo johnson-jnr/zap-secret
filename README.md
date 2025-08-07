@@ -9,6 +9,7 @@
 ### Project setup
 
 ```bash
+# installs server and client packages, runs prisma generate
 $ npm install
 ```
 
