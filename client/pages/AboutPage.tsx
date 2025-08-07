@@ -3,10 +3,10 @@ const AboutPage = () => {
         <div className="space-y-12 md:space-y-16">
             <section className="text-center">
                 <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    What is SnapSecret?
+                    What is ZapSecret?
                 </h1>
                 <p className="text-gray-600 text-base max-w-2xl mx-auto">
-                    SnapSecret lets you share sensitive information with
+                    ZapSecret lets you share sensitive information with
                     confidence. Just paste your message, set an expiry, and
                     we’ll generate a one-time, self-destructing link that can be
                     shared securely.
@@ -94,7 +94,7 @@ const AboutPage = () => {
                             Built with security in mind
                         </h2>
                         <p className="text-sm text-gray-600 mt-1">
-                            SnapSecret is designed to minimize exposure and
+                            ZapSecret is designed to minimize exposure and
                             eliminate traceability. From end to end, your
                             message stays secure.
                         </p>

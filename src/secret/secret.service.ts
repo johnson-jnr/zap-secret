@@ -51,7 +51,7 @@ export class SecretService {
 
     async get(id: string) {
         if (!ObjectId.isValid(id)) {
-            throw new BadRequestException('Invalid Secret ID provided');
+            throw new BadRequestException('Invalid Secret ID provided.');
         }
 
         const secret = await this.prisma.secret.findUnique({
@@ -64,11 +64,11 @@ export class SecretService {
         }
 
         if (secret.expiresAt && secret.expiresAt.getTime() < Date.now()) {
-            throw new ForbiddenException('Expiry period has elapsed');
+            throw new ForbiddenException('Expiry period has elapsed.');
         }
 
         if (secret.burnedAt) {
-            throw new ForbiddenException('Secret has already been viewed');
+            throw new ForbiddenException('Secret has already been viewed.');
         }
 
         let originalText = '';
@@ -80,7 +80,7 @@ export class SecretService {
 
         if (!originalText) {
             throw new InternalServerErrorException(
-                'There was a problem with the decryption',
+                'There was a problem with the decryption.',
             );
         }
 
