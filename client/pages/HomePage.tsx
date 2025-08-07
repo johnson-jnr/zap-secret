@@ -70,9 +70,7 @@ const Home = () => {
 
     const getExpiryHour = () => Number(expiryHour) || 1;
     const getSecretLink = () =>
-        encryptionId
-            ? `${import.meta.env.VITE_APP_URL}/s/${encryptionId}`
-            : null;
+        encryptionId ? `${window.location.origin}/s/${encryptionId}` : null;
 
     return (
         <div>
