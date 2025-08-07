@@ -148,7 +148,7 @@ const Home = () => {
                         <textarea
                             name="secret"
                             maxLength={2048}
-                            className="border border-stone-300 py-2 px-3 rounded-md min-h-12 w-full focus:border-violet-300 focus:outline-none"
+                            className="border border-stone-300 py-2 px-3 rounded-md min-h-12 w-full focus:border-violet-300 focus:outline-none placeholder:text-sm sm:placeholder:text-base"
                             data-testid="secret-input"
                             rows={4}
                             required

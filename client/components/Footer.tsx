@@ -3,12 +3,13 @@ const Footer = () => {
         <footer className="text-center pt-8 pb-4 text-xs text-gray-400">
             Made with&nbsp;<span className="text-[10px]">❤️</span>&nbsp;by
             Johnson Towoju
-            <span className="mx-1 text-gray-300">—</span>
-            <div className="inline-block hover:text-gray-500 hover:underline transition-colors duration-200">
+            <div className="mt-2">
+                <span> Copyright &copy; {new Date().getFullYear()} — </span>
                 <a
-                    href="https://github.com/your-username/your-repo"
+                    href="https://github.com/johnson-jnr/zap-secret"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-gray-500 hover:underline transition-colors duration-200"
                 >
                     GitHub
                     <svg

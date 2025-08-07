@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -13,9 +13,16 @@ const Navbar = () => {
                 <Link to="/" className="hover:text-black">
                     Home
                 </Link>
-                <Link to="/about" className="hover:text-black">
+                <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                        isActive
+                            ? 'underline decoration-gray-900'
+                            : 'hover:text-black'
+                    }
+                >
                     About
-                </Link>
+                </NavLink>
             </nav>
         </header>
     );
