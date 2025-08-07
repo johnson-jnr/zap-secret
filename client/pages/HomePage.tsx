@@ -76,6 +76,7 @@ const Home = () => {
 
     return (
         <div>
+            <title>ZapSecret</title>
             <Hero />
             <section className="mt-12 lg:mt-20 ring ring-stone-400 rounded-xl max-w-xl mx-auto overflow-hidden">
                 {encryptionId ? (
