@@ -10,7 +10,6 @@
 
 ```bash
 $ npm install
-$ cd client && npm install
 ```
 
 ### Compile and run the project
