@@ -16,14 +16,14 @@ $ npm install
 ### Compile and run the project
 
 ```bash
-# development (starts both server and client)
+# development (starts both server and client server)
 $ npm run dev
-
-# production mode
-$ npm run prod
 
 # build
 $ npm run build
+
+# production mode
+$ npm run start:prod
 ```
 
 ### Run tests
