@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ViewSecretPage = () => {
     const [decryptedValue, setDecryptedValue] = useState('');
@@ -133,12 +133,12 @@ const ViewSecretPage = () => {
                             )}
 
                             <div className="flex justify-center gap-4 flex-wrap">
-                                <a
-                                    href="/"
+                                <Link
+                                    to="/"
                                     className="btn btn-outline btn-sm sm:btn-md"
                                 >
                                     Create your own secret
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     )}

@@ -72,6 +72,12 @@ const Home = () => {
     const getSecretLink = () =>
         encryptionId ? `${window.location.origin}/s/${encryptionId}` : null;
 
+    const reset = () => {
+        setEncryptionId(null);
+        setSecret('');
+        setExpiryHour(null);
+    };
+
     return (
         <div>
             <title>ZapSecret</title>
@@ -129,10 +135,7 @@ const Home = () => {
 
                             <div className="flex justify-center gap-4 mt-4 flex-wrap">
                                 <button
-                                    onClick={() => {
-                                        setEncryptionId(null);
-                                        setSecret('');
-                                    }}
+                                    onClick={() => reset()}
                                     className="btn btn-outline"
                                 >
                                     Create another secret
