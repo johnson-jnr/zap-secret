@@ -13,7 +13,7 @@ describe('HomePage', () => {
     it('generate secret link url after submission', async () => {
         vi.spyOn(global, 'fetch').mockResolvedValue({
             ok: true,
-            json: async () => ({ id: 'abc123' }),
+            json: async () => ({ id: 'mocksecretid', success: true }),
         } as Response);
 
         const userEvent = UserEvent.setup();
@@ -26,7 +26,8 @@ describe('HomePage', () => {
         const button = screen.getByTestId('submit-btn');
         await userEvent.click(button);
 
-        const link = await screen.findByText(/\/s\/abc123/i);
+        expect(global.fetch).toHaveBeenCalled();
+        const link = await screen.findByText(/\/s\/mocksecretid/i);
         expect(link).toBeInTheDocument();
 
         vi.restoreAllMocks();

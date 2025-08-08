@@ -11,9 +11,13 @@ vi.mock('../pages/AboutPage', () => ({
     default: () => <div data-testid="aboutpage" />,
 }));
 
-// vi.mock('../pages/xyz', () => ({
-//     default: () => <div data-testid="notfoundpage" />,
-// }));
+vi.mock('../pages/ViewSecretPage', () => ({
+    default: () => <div data-testid="viewsecretpage" />,
+}));
+
+vi.mock('../pages/PageNotFound', () => ({
+    default: () => <div data-testid="notfoundpage" />,
+}));
 
 describe('App', () => {
     it('renders Home page on /', async () => {
@@ -35,12 +39,21 @@ describe('App', () => {
         expect(screen.getByTestId('aboutpage')).toBeInTheDocument();
     });
 
-    //  it('renders 404 Page', async () => {
-    //      render(
-    //         <MemoryRouter initialEntries={['/fzz']}>
-    //             <RoutesConfig />
-    //         </MemoryRouter>,
-    //     );
-    //     expect(screen.getByTestId('aboutpage')).toBeInTheDocument();
-    // });
+    it('renders View Secret Page', async () => {
+        render(
+            <MemoryRouter initialEntries={['/s/mockid']}>
+                <App />
+            </MemoryRouter>,
+        );
+        expect(screen.getByTestId('viewsecretpage')).toBeInTheDocument();
+    });
+
+    it('renders 404 Page', async () => {
+        render(
+            <MemoryRouter initialEntries={['/xyz']}>
+                <App />
+            </MemoryRouter>,
+        );
+        expect(screen.getByTestId('notfoundpage')).toBeInTheDocument();
+    });
 });
