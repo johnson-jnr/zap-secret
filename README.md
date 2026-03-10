@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.zapsecret.app" target="blank"><img src="/client/public/zaplogo.png" width="100" alt="Nest Logo" /></a>
+  <a href="https://www.zapsecret.app" target="blank"><img src="/client/public/zaplogo.png" width="70" alt="Nest Logo" /></a>
 </p>
 
 ## ZapSecret
