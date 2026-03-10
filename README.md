@@ -8,8 +8,12 @@
 
 ## Screenshots
 
-<img src="docs/images/Screenshot%202026-03-10%20at%2023.35.40.png" width="180" alt="ZapSecret Home" />
-<img src="docs/images/Screenshot%202026-03-10%20at%2023.43.40.png" width="201" alt="ZapSecret View Secret" />
+<table>
+  <tr>
+    <td><img src="docs/images/Screenshot%202026-03-10%20at%2023.35.40.png" width="400" alt="ZapSecret Home" /></td>
+    <td><img src="docs/images/Screenshot%202026-03-10%20at%2023.43.40.png" width="400" alt="ZapSecret View Secret" /></td>
+  </tr>
+</table>
 
 ### Project setup
 
