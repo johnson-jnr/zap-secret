@@ -8,8 +8,8 @@
 
 ## Screenshots
 
-![ZapSecret Home](docs/images/Screenshot%202026-03-10%20at%2023.35.40.png)
-![ZapSecret View Secret](docs/images/Screenshot%202026-03-10%20at%2023.38.29.png)
+<img src="docs/images/Screenshot%202026-03-10%20at%2023.35.40.png" width="600" alt="ZapSecret Home" />
+<img src="docs/images/Screenshot%202026-03-10%20at%2023.43.40.png" width="600" alt="ZapSecret View Secret" />
 
 ### Project setup
 
