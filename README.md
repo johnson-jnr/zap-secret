@@ -6,6 +6,11 @@
 
 [ZapSecret](https://www.zapsecret.app) lets you share sensitive information with confidence. Just paste your message, set an expiry, and it generate a one-time, self-destructing link that can be shared securely.
 
+## Screenshots
+
+![ZapSecret Home](docs/images/Screenshot%202026-03-10%20at%2023.35.40.png)
+![ZapSecret View Secret](docs/images/Screenshot%202026-03-10%20at%2023.38.29.png)
+
 ### Project setup
 
 ```bash
