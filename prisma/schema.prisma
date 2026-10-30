@@ -10,12 +10,12 @@ generator client {
 }
 
 datasource db {
-    provider = "mongodb"
+    provider = "postgresql"
     url      = env("DATABASE_URL")
 }
 
 model Secret {
-    id         String    @id @default(auto()) @map("_id") @db.ObjectId
+    id         String    @id @default(uuid()) @db.Uuid
     hash       String // SHA256 hash of the original plaintext
     cipherText String // AES-encrypted version of the plaintext
     expiresAt  DateTime? // Optional time-to-live (if not set, it’s single-use)
